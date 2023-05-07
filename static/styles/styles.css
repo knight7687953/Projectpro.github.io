@@ -1,0 +1,291 @@
+body{
+    /* Dark Mode*/
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: left;
+    overflow-x: hidden;
+}
+header{
+    background:#262626;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+header .logo p, header .logo h1{
+    margin: 0;
+    line-height: 1;
+}
+header .logo p{
+    font-weight: 300;
+}
+header nav{
+    display: flex;
+    align-items: center;
+}
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+header nav button{
+    background: purple;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 20px;
+    padding:10px 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+header nav button:hover{
+    background: #fff;
+    color: purple;
+}
+header a{
+    color:#fafafa;
+    text-decoration: none;
+}
+main{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main h2{
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+main img{
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+main p{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 20px;
+}
+main button{
+    background: purple;
+    border: 0;
+    font-size: 22px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 20px;
+    padding:10px 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-weight: 600;
+}
+main.login{
+    flex-direction: row;
+    gap:100px;
+}
+main.login form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+main.login form input{
+    padding: 20px 30px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 400px;
+    box-sizing: border-box;
+}
+main.login form input[type="submit"]{
+    background: purple;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+main.login .section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+button.reg_btn{
+    background: #fff;
+    color: purple;
+    width: 400px;
+}
+main .section button{
+    margin:20px 0px;
+}
+.project h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.project ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.project button{
+    background: #fafafa;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: purple;
+    margin-left: 20px;
+    padding:10px 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.section button.new{
+    padding:10px 0px;
+    width: 100%;
+    font-size: medium;
+}
+.section h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.login.dash{
+    gap:10%;
+    justify-content: flex-start;
+    padding:30px 200px;
+}
+.fa-hourglass-half{
+    color: orange;
+}
+.fa-circle-check{
+    color: #10b981;
+}
+li.status{
+    padding:10px 0;
+}
+.fa-circle-xmark{
+    color: red;
+}
+button.approve{
+    background-color: #10b981;
+    color: #262626;
+}
+button.approve i, button.reject i{
+    color:#1a1a1a
+}
+button.reject{
+    background-color: #ff4949;
+    color: #262626;
+}
+.buttons button{
+    border-radius: 0;
+    padding: 15px 30px;
+}
+.section form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.section form input, textarea{
+    padding: 20px 30px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 400px;
+    box-sizing: border-box;
+    background-color: #262626;
+    color:white;
+}
+.section form input:focus{
+    background-color: #424242;
+    color:white;
+}
+.section form input[type="submit"]{
+    background: purple;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+main.home{
+
+    align-items: center;
+}
+/* Responsive */
+
+@media (max-width: 726px){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header .logo{
+        margin-bottom: 20px;
+    }
+    main h2{
+        font-size: 40px;
+    }
+    main img{
+        max-width: 300px;
+    }
+    main.login{
+        flex-direction: column;
+        align-items: center;
+    }
+    main.herosec{
+        display:none;
+    }
+    main.login .section{
+        align-items: center;
+        padding:0px 50px;
+    }
+    main.login form input{
+        width: 100%;
+    }
+    main.login button{
+        width: 100%;
+        padding:20px 55px;
+    }
+    .login.dash{
+        padding:10px;
+    }
+    .login.dash .section{
+        padding:0px;
+    }
+    .login.dash a .new{
+        width:100%;
+        padding:20px;
+    }
+    main .section form input, textarea{
+        width: 100%;
+    }
+}

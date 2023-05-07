@@ -1,0 +1,68 @@
+{% include "header_login.html" %}
+    <main class="login dash">
+        <div class="section">
+        <h2>Submissions</h2>
+        <p>List of projects submitted by participants</p>
+    </div>
+    <div class="section">
+        {% for project in projects %}
+        <div class="project">
+            <h3>{{ project.name }}</h3>
+            <ul>
+                {% if project.status == "pending" %}
+                <li class="status"><i class="fa fa-hourglass-half"></i>Pending Approval</li>
+                {% elif project.status == "approved" %}
+                <li class="status"><i class="fa fa-circle-check"></i> Approved</li>
+                {% elif project.status == "rejected" %}
+                <li class="status"><i class="fa fa-circle-xmark"></i> Rejected</li>
+                {% endif %}
+                <li class="members"><i class="fa fa-users"></i> Department/Section:
+                    {{ project.department }} </li>
+                <li class="members"><i class="fa fa-users"></i> Instructor:
+                    {{ project.instructor }} </li>
+                <li class="members"><i class="fa fa-users"></i> Members: 
+                    {% for member in project.members %}
+                        {{ member }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </li>
+            </ul>
+            <p>Feedback: {{ project.feedback }}</p>
+            <form action="/feedback" method="post">
+                <input type="hidden" name="project_id" id="" value="{{ project.project_id }}">
+                <input type="text" name="feedback" id="" placeholder="Add your feedback on this project.">
+                <input type="submit" value="Submit" style="width:100px; padding:5px; font-size: 14px; font-weight:500;">
+            </form>
+            <div class="buttons">
+            <a href="{{ project.link }}"><button>View Project <i class="fa fa-arrow-up-right-from-square"></i></button></a>
+            {% if project.status == "pending" %}
+            <button class="approve" onclick="approve('{{ project.project_id }}')"><i class="fa fa-circle-check"></i> Approve</button>
+            <button class="reject" onclick="reject('{{ project.project_id }}')"><i class="fa fa-circle-xmark"></i> Reject</button>
+            {% endif %}
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    </main>
+    <script>
+        function approve(id) {
+            status_update(id, "approved");
+        }
+
+        function reject(id) {
+            status_update(id, "rejected");
+        }
+
+        function status_update(id, status) {
+            fetch("/status?id=" + id + "&status=" + status, {
+                method: "POST",
+            }).then(res => res.json()).then(data => {
+                if (data.status == "success") {
+                    alert("Status updated successfully")
+                    window.location = "/admin";
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

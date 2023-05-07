@@ -1,0 +1,19 @@
+{% include "header_login.html" %}
+    <main>
+        <div class="section">
+        <h2>Submit Project</h2>
+        <p>Submit your project with correct details.</p>
+        <form action="/submit" method="post">
+            <input type="text" name="projectname" class="projectname" placeholder="Project Name">
+            <input type="text" name="department" placeholder="Department/Section">
+            <textarea type="text" name="projectmembers[]" multiple placeholder="Project Members" rows="5"></textarea>
+            <input type="text" name="instructor" placeholder="Instructor">
+            <input type="text" name="link" placeholder="Project Link">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat",sans-serif;
+  }
+  
+  body{
+    background:rgb(26, 26, 26);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://getwallpapers.com/wallpaper/full/8/9/8/693947-download-free-good-background-picture-1920x1200-photo.jpg");
+
+    /* Full height */
+    /* height: 100%;  */
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  
+  .social-buttons a{
+    display: inline-flex;
+    text-decoration: none;
+    font-size: 18px;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 8px;
+  }
+  
+  .social-buttons a::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg,#22a6b3,#30336b);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.3s ease-in;
+  }
+  
+  .social-buttons a:hover::before{
+    transform: scale(0);
+  }
+  
+  .social-buttons a i{
+    transition: 0.3s ease-in;
+  }
+  
+  .social-buttons a:hover i{
+    background: linear-gradient(45deg,#22a6b3,#30336b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2.2);
+  }
+  

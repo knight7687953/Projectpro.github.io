@@ -1,0 +1,19 @@
+{% include "header.html" %}
+    <main class="login">
+        <div class="herosec section">
+        <img src="{{ url_for('static', filename='assets/homebanner.svg') }}" alt="" srcset="">
+        <h2>Welcome to ProjectPro</h2>
+        <p>ProjectPro is an online integrated platform for project management.</p>
+    </div>
+    <div class="section">
+        <form action="/register" method="post">
+            <input type="text" name="name" id="" placeholder="Your Name">
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{2,4}$"/ placeholder="Email" name="username">
+            <input type="password" placeholder="Password" name="password">
+            <!-- <input type="submit" value="Register"> -->
+            <input type="submit" value="Sign up">
+        </form>
+        <a href="/login"><button class="reg_btn">Login</button></a>
+    </main>
+</body>
+</html>

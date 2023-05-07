@@ -1,0 +1,37 @@
+{% include "header_login.html" %}
+    <main class="login dash">
+        <div class="section">
+        <h2>My Projects</h2>
+        <a href="/submit"><button class="new">New Project <i class="fa fa-plus"></i></button></a>
+        
+    </div>
+    <div class="section">
+        {% for project in projects %}
+        <div class="project">
+            <h3>{{ project.name }}</h3>
+            <ul>
+                {% if project.status == "pending" %}
+                <li class="status"><i class="fa fa-hourglass-half"></i>Pending Approval</li>
+                {% elif project.status == "approved" %}
+                <li class="status"><i class="fa fa-circle-check"></i> Approved</li>
+                {% elif project.status == "rejected" %}
+                <li class="status"><i class="fa fa-circle-xmark"></i> Rejected</li>
+                {% endif %}
+                <li class="members"><i class="fa fa-users"></i> Instructor:
+                    {{ project.instructor }} </li>
+                <li class="members"><i class="fa fa-users"></i> Members: 
+                    {% for member in project.members %}
+                        {{ member }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    {% if project.feedback %}
+                    <p>Feedback: {{ project.feedback }}</p>
+                    {% endif %}
+                </li>
+            </ul>
+            <a href="{{ project.link }}"><button>View Project <i class="fa fa-arrow-up-right-from-square"></i></button></a>
+        </div>
+        {% endfor %}
+    </div>
+    </main>
+</body>
+</html>
